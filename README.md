@@ -15,6 +15,33 @@ Claude skills for product and UI design work. Each folder in `skills/` is a self
 
 ## Install
 
+### With [skills.sh](https://skills.sh)
+
+Install all skills globally for Claude Code:
+
 ```bash
-cp -R skills/* ~/.claude/skills/
+npx skills add vuhongdoan/agent-design-skills --skill '*' -a claude-code -g
+```
+
+Install specific skills only:
+
+```bash
+npx skills add vuhongdoan/agent-design-skills --skill design-lead --skill design-ui
+```
+
+Other useful commands:
+
+```bash
+npx skills add vuhongdoan/agent-design-skills --list   # list available skills
+npx skills update                                      # update installed skills
+npx skills remove design-ui                            # remove a skill
+```
+
+Drop `-g` to install into the current project instead of user-level. Since this repo is private, your git must be authenticated with GitHub (e.g. `gh auth login`).
+
+### Manually
+
+```bash
+git clone https://github.com/vuhongdoan/agent-design-skills.git
+cp -R agent-design-skills/skills/* ~/.claude/skills/
 ```
